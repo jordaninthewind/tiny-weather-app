@@ -42,15 +42,15 @@ const populateDOM = () => {
   const cityName = document.getElementById("city-name");
   cityName.innerHTML = `<h1>${weatherData.name}</h1>`;
   const temperature = document.getElementById("temperature");
-  temperature.innerHTML = `<h2>${setConversion(
+  temperature.innerText = `${setConversion(
     weatherData.main.temp
-  )}º${conversion}</h2>`;
+  )}º${conversion}`;
   temperature.addEventListener("click", () => {
     conversion === "C" ? (conversion = "F") : (conversion = "C");
-    temperature.innerHTML = `<h2>${setConversion(
+    temperature.innerText = `${setConversion(
       weatherData.main.temp,
       conversion
-    )}º${conversion}</h2>`;
+    )}º${conversion}`;
   });
   const sky = document.getElementById("sky");
   sky.innerHTML = `<h2 >${weatherData.weather[0].main}</h2>`;
